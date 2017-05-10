@@ -1,0 +1,20 @@
+html
+    head
+        title=title
+    body
+        h1=text1
+        h2=text2
+        if IsInsert
+            form(name='again',method='POST',action='again')
+                div
+                    input(type='submit',value='INSERT AGAIN')
+            
+        else
+            form(name='insert',method='POST',action='inserted')
+                div
+                    label(for='insert') INSERT TEXT
+                    input(type='text',name='insert',placeholder='insert your text')
+                div
+                    input(type='submit',value='INSERT')
+        form(name='show',method='POST',action='show')
+            input(type='submit',value='Show')
