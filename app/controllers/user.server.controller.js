@@ -30,10 +30,11 @@ exports.insertAgain = function(req,res){
     });
 };
 exports.show = function(req,res){
-   ref.on('value',function(snap){
-        console.log(snap.val());
-        res.render('list',{
-            para:snap.val().toString()
-        });
+   ref.once('value')
+   .then(function(snap){
+     console.log(snap.val());
+     res.render('list',{
+        para:snap.val()
+     });
    });
 };
